@@ -13,6 +13,7 @@
     "shadcn:add": "npx shadcn-vue@latest add"
   },
   "dependencies": {
+    "@nuxt/kit": "^3.12.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.408.0",
@@ -21,7 +22,6 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@nuxt/kit": "^3.12.3",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "nuxt": "^3.12.3",
     "shadcn-nuxt": "^0.10.4",
