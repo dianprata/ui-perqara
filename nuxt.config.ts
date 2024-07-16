@@ -5,11 +5,16 @@ const currentDir = dirname(fileURLToPath(import.meta.url))
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt'],
-  shadcn: {
-    prefix: '',
-    componentDir: './components/ui',
-  },
+  modules: ['@nuxtjs/tailwindcss'],
+  components: [
+    {
+      path: join(currentDir, './components/ui'),
+      // this is required else Nuxt will autoImport `.ts` file
+      extensions: ['.vue'],
+      // prefix for your components, eg: UiButton
+      prefix: ''
+    },
+  ],
   css: [
     join(currentDir, './assets/css/tailwind.css')
   ],
