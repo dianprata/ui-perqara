@@ -18,9 +18,5 @@ export default defineNuxtConfig({
   css: [
     join(currentDir, './assets/css/tailwind.css')
   ],
-  alias: {
-    '@': currentDir,
-    '~': currentDir,
-  },
   compatibilityDate: '2024-07-16',
 })
