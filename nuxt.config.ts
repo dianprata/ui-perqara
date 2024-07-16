@@ -1,6 +1,7 @@
-import { createResolver } from '@nuxt/kit'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
 
-const { resolve } = createResolver(import.meta.url)
+const currentDir = dirname(fileURLToPath(import.meta.url))
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -10,11 +11,11 @@ export default defineNuxtConfig({
     componentDir: './components/ui',
   },
   css: [
-    resolve('./assets/css/tailwind.css'),
+    join(currentDir, './assets/css/tailwind.css')
   ],
   alias: {
-    '@': resolve('./'),
-    '~': resolve('./'),
+    '@': currentDir,
+    '~': currentDir,
   },
   compatibilityDate: '2024-07-16',
 })
