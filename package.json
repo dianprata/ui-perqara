@@ -1,7 +1,7 @@
 {
   "name": "nuxt-app",
-  "private": true,
   "type": "module",
+  "version": "0.0.1",
   "main": "./nuxt.config.ts",
   "scripts": {
     "build": "nuxt build",
@@ -16,14 +16,15 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.408.0",
-    "nuxt": "^3.12.3",
     "radix-vue": "^1.9.1",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7",
-    "vue": "latest"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@nuxt/kit": "^3.12.3",
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "nuxt": "^3.12.3",
+    "shadcn-nuxt": "^0.10.4",
     "typescript": "^5.5.3"
   }
 }

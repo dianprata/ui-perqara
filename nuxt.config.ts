@@ -1,22 +1,20 @@
-import { fileURLToPath } from 'url'
-import { dirname, join } from 'path'
+import { createResolver } from '@nuxt/kit'
 
-const currentDir = dirname(fileURLToPath(import.meta.url))
+const { resolve } = createResolver(import.meta.url)
 
 export default defineNuxtConfig({
-  devtools: true,
-  modules: ['@nuxtjs/tailwindcss'],
-  components: [
-    {
-      path: join(currentDir, './components/ui'),
-      // this is required else Nuxt will autoImport `.ts` file
-      extensions: ['.vue'],
-      // prefix for your components, eg: UiButton
-      prefix: ''
-    },
-  ],
-  tailwindcss: {
-    cssPath: join(currentDir, './assets/css/tailwind.css'),
+  devtools: { enabled: true },
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt'],
+  shadcn: {
+    prefix: '',
+    componentDir: './components/ui',
   },
-  compatibilityDate: '2024-07-15',
+  css: [
+    resolve('./assets/css/tailwind.css'),
+  ],
+  alias: {
+    '@': resolve('./'),
+    '~': resolve('./'),
+  },
+  compatibilityDate: '2024-07-16',
 })
